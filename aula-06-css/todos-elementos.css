@@ -1,0 +1,15 @@
+#txtNome {
+    background: gray
+}
+
+ul li {
+    font-size: 25px
+}
+
+form #txt2 {
+    background: green
+}
+
+form input[type="text"] {
+    height: 25px
+}

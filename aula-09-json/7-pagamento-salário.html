@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Pagamentos</title>
+    <meta name="robots" content="noindex,nofollow">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+
+            <h1>Pagamento</h1>
+
+            <label for="txt1">Nome do funcionário:</label>
+            <input type="text" id="nome1">
+
+            <label for="txt2">Valor recebido por hora: R$</label>
+            <input type="number" id="valor1">
+
+            <label for="txt3">Quantidade de horas trabalhadas:</label>
+            <input type="number" id="hora1">
+
+            <button onclick="botao_click()">Calcular</button>
+
+        </div>
+    </div>
+
+    <script>
+
+        function botao_click() {
+
+            var txt1 = document.getElementById("nome1").value;
+
+
+            var txt2 = document.getElementById("valor1").value;
+            var hora = parseFloat(txt2);
+
+            var txt3 = document.getElementById("hora1").value;
+            var quantidade = parseFloat(txt3);
+
+            var total = (hora * quantidade);
+            var mensagem = ("O pagamento para " + txt1 + " deve ser de R$" + total);
+            alert(mensagem)
+
+        }
+
+    </script>
+
+</body>
+</html>

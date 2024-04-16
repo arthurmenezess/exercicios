@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Calculadora de Área e M²</title>
+    <meta name="robots" content="noindex,nofollow">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+
+            <h1>Terreno</h1>
+
+            <p>Digite as medidas do seu terreno nas caixas abaixo.</p>
+
+            <label for="medida1">Largura:</label>
+            <input type="number" id="largura1">
+
+            <label for="medida2">Comprimento:</label>
+            <input type="number" id="comprimento1">
+
+            <label for="preco3">Valor do m² em R$:</label>
+            <input type="number" id="preco1">
+
+
+            <button onclick="botao_click()">Calcular</button>
+
+        </div>
+    </div>
+
+    <script>
+
+        function botao_click() {
+
+            var medida1 = document.getElementById("largura1").value;
+            var medida1 = parseFloat(medida1);
+
+            var medida2 = document.getElementById("comprimento1").value;
+            var medida2 = parseFloat(medida2);
+
+            var preco3 = document.getElementById("preco1").value;
+            var preco3 = parseFloat(preco3);
+
+            var area = (medida1 * medida2);
+            var mensagemArea = ("A área do terreno é de " + area + "m²");
+            alert(mensagemArea);
+
+            var preco = (area * preco3);
+            var mensagemPreco = ("O preço do m² do seu terreno é R$" + preco + ".");
+            alert(mensagemPreco);
+
+        }
+
+    </script>
+
+</body>
+</html>

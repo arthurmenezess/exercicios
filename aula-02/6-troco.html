@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Calculadora de Troco</title>
+    <meta name="robots" content="noindex,nofollow">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+
+            <h1>Troco</h1>
+
+            <label for="valor1">Digite o preço unitário do produto: R$</label>
+            <input type="number" id="preco1">
+
+            <label for="valor2">Digite a quantidade de unidades compradas:</label>
+            <input type="number" id="preco2">
+
+            <label for="valor3">Digite o valor dado pelo cliente: R$</label>
+            <input type="number" id="preco3">
+
+
+            <button onclick="botao_click()">Calcular</button>
+
+        </div>
+    </div>
+
+    <script>
+
+        function botao_click() {
+
+            var valor1 = document.getElementById("preco1").value;
+            var caixa1 = parseFloat(valor1);
+
+            var valor2 = document.getElementById("preco2").value;
+            var caixa2 = parseFloat(valor2);
+
+            var valor3 = document.getElementById("preco3").value;
+            var caixa3 = parseFloat(valor3);
+
+            var precoTotal = (caixa1 * caixa2);
+            var mensagemPreco = ("O valor da compra é R$" + precoTotal);
+            alert(mensagemPreco);
+                  
+            var troco = (caixa3 - precoTotal);
+            var mensagemTroco = ("O troco é R$" + troco);
+            alert(mensagemTroco)
+           
+
+        }
+
+    </script>
+
+</body>
+</html>

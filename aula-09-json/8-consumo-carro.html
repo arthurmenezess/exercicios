@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Consumo Instantâneo</title>
+    <meta name="robots" content="noindex,nofollow">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+
+            <h1>Consumo</h1>
+
+            <label for="txt1">Digite a distância percorrida (em km):</label>
+            <input type="number" id="km1">
+
+            <label for="txt2">Digite o total de combustível gasto (em litros):</label>
+            <input type="number" id="lt1">
+
+
+            <button onclick="botao_click()">Calcular</button>
+
+        </div>
+    </div>
+
+    <script>
+
+        function botao_click() {
+
+            var txt1 = document.getElementById("km1").value;
+            var km2 = parseFloat(txt1);
+
+            var txt2 = document.getElementById("lt1").value;
+            var lt2 = parseFloat(txt2);
+
+            var consumo = (km2 / lt2);
+            var mensagem = "O consumo do seu carro foi de " + consumo + "Km/L."
+            alert(mensagem)
+
+        }
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Maior, Menor e Média</title>
+    <meta name="robots" content="noindex,nofollow">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+
+            <h1>Maior, Menor e Média</h1>
+
+            <label for="txtQuantidadeNumeros">Digite a quantidade de números:</label>
+            <input type="number" id="txtQuantidadeNumeros">
+
+            <label for="txtNumero">Digite o número:</label>
+            <input type="number" id="txtNumero">
+
+            <button onclick="botao_click()">Armazenar</button>
+
+        </div>
+    </div>
+
+    <script>
+
+        var numeros = []; //array criado
+
+        var txtNumero = document.getElementById("txtNumero"); //para evitar ficar repetindo codigo grande, é so criar uma variavel para ele
+        var txtQuantidadeNumeros = document.getElementById("txtQuantidadeNumeros");
+
+        function botao_click() {
+                       
+            var qtdeNumeros = parseInt(document.getElementById("txtQuantidadeNumeros").value);
+
+            if (numeros.length < qtdeNumeros) { //length lê o tamanho do array
+
+                var numeroDigitado = parseInt(document.getElementById("txtNumero").value);
+
+                numeros.push(numeroDigitado); // coloca o numero digitado dentro do array
+
+                txtNumero.value = ""; // limpa a caixa de texto numero
+                txtNumero.focus(); // coloca o foco do mouse em cima da caixa de texto numero
+
+            }
+
+            if (numeros.length == qtdeNumeros) {
+
+                // não pode declarar o maior e o menor numero com 0 pq se colocar n° negativo da merda
+
+                var maiorNumero;
+                var menorNumero;
+                var soma = 0
+                var media;
+
+                for (var i = 0; i < numeros.length; i++) {
+
+                    var numero = numeros[i];
+
+                    if (maiorNumero == undefined || numero > maiorNumero) {
+                        maiorNumero = numero;
+                    }
+
+                    if (menorNumero == undefined || numero < menorNumero) {
+                        menorNumero = numero;
+                    }
+
+                    soma = soma + numero;
+
+                }
+
+                media = soma / numeros.length;
+
+                alert("O maior número é " + maiorNumero + ". O menor número é " + menorNumero + ". E a média é " + media);
+
+                numeros = [];
+
+                txtQuantidadeNumeros.value = "";
+            }
+
+        }
+
+    </script>
+
+</body>
+</html>

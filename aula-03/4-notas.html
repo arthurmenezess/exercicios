@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Notas</title>
+    <meta name="robots" content="noindex,nofollow">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+
+            <h1>Nota</h1>
+
+            <label for="txt1">Digite sua nota do 1° semestre:</label>
+            <input type="number" id="notaSemestre1">
+
+            <label for="txt1">Digite sua nota do 2° semestre:</label>
+            <input type="number" id="notaSemestre2">
+
+            <button onclick="botao_click()">Calcular</button>
+
+        </div>
+    </div>
+
+    <script>
+
+        function botao_click() {
+
+            var txt1 = document.getElementById("notaSemestre1").value;
+            var txt2 = document.getElementById("notaSemestre2").value;
+
+            var nota1 = parseFloat(txt1);
+            var nota2 = parseFloat(txt2);
+
+            var notaMedia = (nota1 + nota2) / 2;
+
+            if (notaMedia < 6) {
+                alert("Sua nota final é " + notaMedia + " e você está REPROVADO.");
+            }
+            else {
+                alert("Sua nota final é " + notaMedia + " e você está APROVADO. Parabéns!")
+            }
+        }
+
+    </script>
+
+</body>
+</html>
